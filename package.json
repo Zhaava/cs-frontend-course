@@ -1,0 +1,27 @@
+{
+  "name": "cs-frontend-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/lection1/bitAccessor.js",
+    "build": "tsc",
+    "dev": "nodemon ./src/lection1/bitAccessor.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhaava/cs-frontend-course.git"
+  },
+  "author": "Zhavoronkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zhaava/cs-frontend-course/issues"
+  },
+  "homepage": "https://github.com/Zhaava/cs-frontend-course#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
