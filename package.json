@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/lection1/bitAccessor.js",
+    "start": "node build/bitAccessor.js",
     "build": "tsc",
-    "dev": "nodemon ./src/lection1/bitAccessor.ts"
+    "dev": "nodemon src/hw1/bitAccessor.ts"
   },
   "repository": {
     "type": "git",
