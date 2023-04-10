@@ -1,25 +1,27 @@
-function createBitGetter (arr):
-    { get: (byteIndex: number, bitIndex: number) => number } {
+type G = {
+    get: (byteIndex: number, bitIndex: number) => number
+}
+
+type S = {
+    set: (byteIndex: number, bitIndex: number, value: number) => void
+}
+
+
+function createBitGetter (arr: Uint8Array): G {
       const get = (byteIndex: number, bitIndex: number): number => {
           return (arr[byteIndex] & (1 << bitIndex)) !== 0 ? 1 : 0;
     }
     return {get};
 }
 
-function createBitAccessor (arr):
-    {
-        get: (byteIndex: number, bitIndex: number) => number,
-        set: (byteIndex: number, bitIndex: number, value: number) => void
-    } {
-    const get = (byteIndex: number, bitIndex: number): number => {
-        return (arr[byteIndex] & (1 << bitIndex)) !== 0 ? 1 : 0;
-    }
-
+function createBitAccessor (arr: Uint8Array): S & G {
+    const get = createBitGetter(arr).get;
     const set = (byteIndex: number, bitIndex: number, value: number): void => {
         if (value) {
             arr[byteIndex] |= (1 << bitIndex);
-        }
+        } else {
             arr[byteIndex] &= ~(1 << bitIndex);
+        }
     }
     return {get, set};
 }
