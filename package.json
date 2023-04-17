@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/bitAccessor.js",
     "build": "tsc",
-    "dev": "nodemon src/hw1/bitAccessor.ts"
+    "dev": "nodemon src/hw3/hw3.ts"
   },
   "repository": {
     "type": "git",
